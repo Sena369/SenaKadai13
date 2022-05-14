@@ -14,11 +14,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                              (name: "パイナップル", isCheck: true)
                             ]
 
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private weak var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "TableViewCell", bundle: nil),
