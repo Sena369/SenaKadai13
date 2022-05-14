@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    private let itemLists = [(name: "りんご", isCheck: false),
+    private let itemList = [(name: "りんご", isCheck: false),
                              (name: "みかん", isCheck: true),
                              (name: "バナナ", isCheck: false),
                              (name: "パイナップル", isCheck: true)
@@ -25,15 +25,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        itemLists.count
+        itemList.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath)
         // swiftlint:disable:next force_cast
         as! TableViewCell
-        cell.configure(image: itemLists[indexPath.row].isCheck ? UIImage(named: "check") : nil,
-                       text: itemLists[indexPath.row].name)
+        cell.configure(image: itemList[indexPath.row].isCheck ? UIImage(named: "check") : nil,
+                       text: itemList[indexPath.row].name)
         return cell
     }
 
