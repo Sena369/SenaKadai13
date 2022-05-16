@@ -32,7 +32,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath)
         // swiftlint:disable:next force_cast
         as! TableViewCell
-        cell.configure(image: itemList[indexPath.row].isCheck ? UIImage(named: "check") : nil,
+        cell.configure(isChecked: itemList[indexPath.row].isCheck,
                        text: itemList[indexPath.row].name)
         return cell
     }

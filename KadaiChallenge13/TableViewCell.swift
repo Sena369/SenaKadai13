@@ -12,8 +12,8 @@ class TableViewCell: UITableViewCell {
     @IBOutlet private weak var checkImageView: UIImageView!
     @IBOutlet private weak var itemLabel: UILabel!
 
-    func configure(image: UIImage?, text: String) {
-        checkImageView.image = image
+    func configure(isChecked: Bool, text: String) {
+        checkImageView.image = isChecked ? UIImage(named: "check") : nil
         itemLabel.text = text
     }
 }
